@@ -1,4 +1,4 @@
-# Wynton_setup
+# Wynton_setup (this .md is still under construction)
 This repository provides instructions to set up your account on UCSF Wynton server based on the experience of He Lab members
 
 ## 1. Preparation on Wynton
