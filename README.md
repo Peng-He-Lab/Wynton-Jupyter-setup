@@ -1,7 +1,7 @@
 # Wynton_setup
 This repository provides instructions to set up your account on UCSF Wynton server based on the experience of He Lab members
 
-## 1. Preparation
+## 1. Preparation on Wynton
 1.1 [Request a Wynton account](https://wynton.ucsf.edu/hpc/about/join.html)
 1.2 Log in using your credentials
 ```
@@ -10,6 +10,10 @@ alice@log1.wynton.ucsf.edu:s password:
 [alice@log1 ~]$
 ```
 <details><summary>For setting up login atlas, follow this extra step🔽</summary>
+XXXXXX
+  </details>
+
+<details><summary>For password-free login, follow this extra step🔽</summary>
 XXXXXX
   </details>
 
@@ -30,5 +34,14 @@ alice1@dev1:s password: XXXXXXXXXXXXXXXXXXX
 
 `nano ~/.bashrc` and then include XXXXXXXXXX
 
+## 2. Set up Jupyter notebook
 
+2.1 install jupyter
 
+2.2 set up the port
+
+2.3 login from local machine
+
+2.4 run jupyter notebook from server
+
+2.5 open notebooks from browser
