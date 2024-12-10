@@ -18,9 +18,11 @@ XXXXXX
   </details>
 
 1.3 Log into [development nodes](https://wynton.ucsf.edu/hpc/get-started/development-prototyping.html)
+```
 [alice@log1 ~]$ ssh dev1.wynton.ucsf.edu
 alice1@dev1:s password: XXXXXXXXXXXXXXXXXXX
 [alice@dev1 ~]$ 
+```
 
 1.4 Install miniconda
 
@@ -37,11 +39,51 @@ alice1@dev1:s password: XXXXXXXXXXXXXXXXXXX
 ## 2. Set up Jupyter notebook
 
 2.1 install jupyter
+```
+pip3 install jupyter
+```
 
 2.2 set up the port
+```
+jupyter notebook --generate-config
+```
+Then edit the generated configuration file `jupyter_notebook_config.py` through
+```
+nano ~/.jupyter/jupyter_notebook_config.py
+```
+Then choose a port number (i.e. 8888) and uncomment and edit the line 
+```
+## The port the server will listen on (env: JUPYTER_PORT).
+#  Default: 0
+c.ServerApp.port = 8888
+```
 
-2.3 login from local machine
+2.3 run jupyter notebook from server
 
-2.4 run jupyter notebook from server
+Open a `screen` or `tmux` window. See detailed `screen` [usage](https://www.liquidweb.com/blog/how-to-use-the-screen-command-in-linux/) or `tmux` [usage](https://www.linuxtrainingacademy.com/tmux-tutorial/),
+```
+screen
+```
+Then initiate a jupyter notebook
+```
+jupyter notebook --no-browser
+```
+You will see something like
+```
+Or copy and paste one of these URLs:
+        http://localhost:8888/tree?token=XXXXXXX
+        http://127.0.0.1:8888/tree?token=XXXXXXX
+```
+Copy the token XXXXXXX
+
+
+2.4 login from local machine
+
+Open a new terminal session and connect to the jupyter notebook running on the Wynton through
+```
+ssh -J alice@log1.wynton.ucsf.edu -L 8080:localhost:8888 alice@dev1
+```
 
 2.5 open notebooks from browser
+
+Now open a browser and go to `http://localhost:8080/`. You might need to paste the token copied above. Then you are all set. 
